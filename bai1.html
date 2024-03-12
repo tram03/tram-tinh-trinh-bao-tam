@@ -1,0 +1,129 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <script src="./js.bootstrap.min.js"></script>
+    <script src="./js.jquery.min.js"></script>
+    <link rel="stylesheet" href="./style.css" />
+    <title>Document</title>
+    <style>
+     body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    }
+
+    .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    }
+
+    h2 {
+    color: #333;
+    }
+
+    input[type="text"],
+    select {
+    width: 100%;
+    max-width: 600px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #08b8cb;
+    border-radius: 5px;
+    box-sizing: border-box;
+    }
+
+    input[type="button"] {
+    padding: 10px 20px;
+    background-color: #2a2a2a;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    }
+
+    input[type="button"]:hover {
+    background-color: #213b57;
+    }
+
+    .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 20px;
+    }
+
+    .card {
+    width: 30%;
+    margin-bottom: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .card img {
+    width: 100%;
+    border-radius: 5px 5px 0 0;
+    }
+
+    .card-body {
+    padding: 15px;
+    }
+
+    .card-title {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+    }
+
+    .card-text {
+    margin: 5px 0;
+    }
+
+    .card-buttons button {
+    padding: 5px 10px;
+    background-color: #2a2a2a;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    }
+
+    .card-buttons button:hover {
+    background-color: #213b57;
+    }
+
+    </style>
+  </head>
+  <body style="background-color: rgb(255, 255, 255)">
+    <div class="container">
+      <h2>Create Product</h2>
+      <input type="text" id="productName" placeholder="Product Name" />
+      <input type="text" id="productImage" placeholder="Image URL" />
+      <input type="text" id="productPrice" placeholder="Price" />
+      <input type="text" id="productDiscount" placeholder="Discount" />
+      <select id="productGender">
+        <option value="men">Men</option>
+        
+      </select>
+      <input type="button" value="Create Product" onclick="createProduct()" />
+
+      <h2>Products</h2>
+      <input type="button" value="Show Men Products" onclick="show(arr)" />
+      <input type="button" value="Show Women Products" onclick="show(women)" />
+
+      <div class="card-container" id="tbl"></div>
+
+      <div id="editForm" style="display: none">
+        <h2>Edit Product</h2>
+        <input type="text" id="editProductName" placeholder="Product Name" />
+        <input type="text" id="editProductImage" placeholder="Image URL" />
+        <input type="text" id="editProductPrice" placeholder="Price" />
+        <input type="text" id="editProductDiscount" placeholder="Discount" />
+        <input type="button" value="Update Product" onclick="updateProduct()" />
+      </div>
+    </div>
+  </body>
